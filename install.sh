@@ -29,6 +29,13 @@ pip install -r requirements.txt || {
     exit 1
 }
 
+# Step 4: Verify Pillow installation
+python -c "import PIL" 2>/dev/null && echo "✅ Pillow installed successfully." || {
+    echo "❌ Pillow installation failed."
+    exit 1
+}
+
+echo ""
 echo "✅ Installation complete."
 echo "To run the CLI tool, use:"
 echo ""
