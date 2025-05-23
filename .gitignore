@@ -1,6 +1,10 @@
-venv/
+# Python build artifacts
+*.egg-info/
+dist/
+build/
 __pycache__/
 *.pyc
-.DS_Store
-*.webp
-*.jpg
+*.pyo
+*.pyd
+.venv/
+venv/

@@ -7,7 +7,7 @@ setup(
     install_requires=["Pillow>=10.0.0"],
     entry_points={
         "console_scripts": [
-            "webp2jpg=cli:main"
+            "webp2jpg = webp2jpg.cli:main"
         ]
     },
     author="Julles",
