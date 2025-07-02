@@ -1,53 +1,66 @@
-# WebP to JPEG Converter
+# webp2jpg
 
-A simple command-line tool to convert `.webp` images to `.jpg` format. Supports single-file and batch directory conversion.
+A simple, tiny CLI tool to convert WebP images to JPEG format. It can convert individual files or all `.webp` images in a folder, while copying non-WebP files to the output directory.
 
-## 🛠 Installation
+## Behavior
 
-### Option 1: Automatic Setup (Recommended)
+- Converts `.webp` images to `.jpg`
+- Recursively processes folders
+- Copies non-WebP files alongside converted images
+- Reports how many images were converted and how many were copied
 
-Run the install script (works on Linux/macOS and Windows via Git Bash):
+## Installation
 
 ```bash
-bash install.sh
+pip install .
+```
+
+Make sure you're in the root of the project directory when running the command above.
+
+## Usage
+
+### After Installation
+
+Once installed via `pip`, you can use the `webp2jpg` command directly from the terminal:
+
+```bash
+webp2jpg path/to/file_or_folder -o path/to/output/
+```
+
+### Example
+
+```bash
+webp2jpg ./webp_images -o ./converted_images
 ```
 
 This will:
-- Create a virtual environment
-- Install dependencies from `requirements.txt`
-- Activate the environment
+- Convert all `.webp` files to `.jpg`
+- Copy all non-WebP files to the output folder
+- Inform how many were converted and how many were copied
 
-### Option 2: Manual Setup
+### Developer Mode (Run from source)
+
+If you haven't installed the tool and wish to run it from the source:
 
 ```bash
-git clone https://github.com/your-username/webp2jpg.git
-cd webp2jpg
-python -m venv venv
-source venv/bin/activate  # On Windows (Git Bash): source venv/Scripts/activate
+python cli.py path/to/file_or_folder -o path/to/output/
+```
+
+## Dependencies
+
+- Python 3.7+
+- [Pillow](https://pypi.org/project/Pillow/)
+
+Install dependencies with:
+
+```bash
 pip install -r requirements.txt
 ```
 
-## 🚀 Usage
+## License
 
-Convert a single file:
-```bash
-python cli.py image.webp
-```
+MIT
 
-Convert a directory of `.webp` files:
-```bash
-python cli.py path/to/webp_images/
-```
+## Author
 
-Specify output directory:
-```bash
-python cli.py path/to/webp_images/ -o path/to/output/
-```
-
-## 📦 Packaging
-
-To install as a command-line tool:
-```bash
-pip install -e .
-webp2jpg path/to/webp_images/
-```
+Julles Pio
